@@ -6,55 +6,58 @@
 	<link rel="stylesheet" type="text/css" href="piedraPapelTijera.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rokkitt:ital,wght@0,700;1,700&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200..900&display=swap" rel="stylesheet">
 	<title>Piedra Papel Tijera</title>
 </head>
 
 <body>
-
+	<div class="contenido">
 	<h1>Piedra, Papel o Tijera</h1>
 
-	<div class="contenido">
-	<div id="pantalla-inicial">
+	<div id="pantalla-inicial" class="centrar-contenido">
 		<h2> ¿Cómo se juega? </h2>
+		<div class="espacio-en-blanco"></div>
 		<p> Piedra, Papel o Tijera es un juego de manos con tres elementos:
-			<li> Piedra: vence a la tijera, rompiéndola. </li>
-			<li> Tijera: vence al papel, cortándolo. </li>
-			<li> Papel: vence a la piedra, envolviéndola. </li>
-			El juego forma un ciclo cerrado donde cada elemento puede vencer a uno y ser vencido por otro.  </p>
+			<div class="espacio-en-blanco"></div>
+			<section class="layout">
+				<div class="grow1"><img src="img/ejemploPiedra.png"><br> Piedra: vence a la tijera, rompiéndola.</div>
+				<div class="grow1"><img src="img/ejemploPapel.png"><br>Papel: vence a la piedra, envolviéndola.</div>
+				<div class="grow1"><img src="img/ejemploTijera.png"><br>Tijera: vence al papel, cortándolo.</div>
+			  </section>
+			  <div class="espacio-en-blanco"></div>
+			El juego forma un ciclo cerrado donde cada elemento puede vencer a uno y ser vencido por otro. </p>
+		<div class="espacio-en-blanco"></div>
 		<button id="boton-iniciar" class="boton-comun"> Iniciar el juego </button>
 	</div>
 	
-	<div id="pantalla-formulario" style="display: none;">
+	<div id="pantalla-formulario" class="centrar-contenido" style="display: none;">
 		<p><label>¿Cómo te llamas? </label><input type="text" name="nombre"></p>
 		<p><label>¿Cuántas partidas quieres jugar? </label><input type="number" name="partidas" value="0"></p>
 		<p id="mensaje-error-nombre" style="color: red; display: none;"> El nombre debe tener más de 3 caracteres y no empezar con un número</p>
-		<p id="mensaje-error-partidas" style="color: red; display: none;"> El número de partidas debe ser superior a 0</p>
+		<p id="mensaje-error-partidas" style="color: red; display: none;"> El número de partidas debe ser superior a 0 e inferior a 6</p>
 		<button id="boton-empezar" class="boton-comun boton-empezar-color">Empezar la partida</button>
+		<button id="boton-retroceder" class="boton-flecha"> 
+			<img src="img/botonRetroceder.png" alt="Retroceder">
+		</button>
 	</div>
 
-	<div id="pantalla-juego" style="display: none;">
+	<div id="pantalla-juego" class="centrar-contenido" style="display: none;">
 		<h3>Jugando la partida <span id="actual">0</span> de <span id="total">0</span>.</h3>
-
 		<div id="jugador">
-			<img class="seleccionado" src="img/defecto.png">
-			<img class="noSeleccionado" src="img/defecto.png">
-			<img class="noSeleccionado" src="img/defecto.png">
+			<img class="img-jugador seleccionado" src="img/defecto.png">
+			<img class="img-jugador noSeleccionado" src="img/defecto.png">
+			<img class="img-jugador noSeleccionado" src="img/defecto.png">
 		</div>
-
 		<button id="boton-ya" class="boton-comun boton-ya-color">¡YA!</button>
-
 		<div id="maquina">
-			<img src="img/defecto2.png">
+			<img src="img/defecto.png">
 		</div>
-
 		<div>
 			<h3>Resultado</h3>
 			<ul id="historial">
 			</ul>
 			<button id="boton-reset" class="boton-comun boton-reset-color">Reset</button>
 		</div>
-
 	</div>
 </div>
 

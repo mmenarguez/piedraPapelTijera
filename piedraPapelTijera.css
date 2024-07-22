@@ -1,30 +1,55 @@
-html, body {
+.layout {
+	width: 100%;
+	display: flex;
+	gap: 16px;
+  }
+  
+.grow1 { flex-grow: 1; }
+  
+.espacio-en-blanco {
+    margin-bottom: 50px; 
+}
+
+  html, body {
 	height: 100%;
 	margin: 0;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
     justify-content: center;    
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: #bbd5f9;
+	font-family: 'Inconsolata', monospace;
+	background-color: hsla(173, 77%, 83%, 1);
+    background-image: radial-gradient(circle at 5% 1%, hsla(250, 76%, 61%, 1) 7%, transparent 84%), radial-gradient(circle at 7% 81%, hsla(184, 91%, 91%, 1) 16%, transparent 53%), radial-gradient(circle at 11% 29%, hsla(213, 97%, 75%, 1) 8%, transparent 74%), radial-gradient(circle at 39% 52%, hsla(149, 93%, 64%, 1) 6%, transparent 68%), radial-gradient(circle at 90% 50%, hsla(118, 94%, 89%, 1) 2%, transparent 85%);
+    background-blend-mode: normal, normal, normal, normal, normal;
+	background-size: cover;
 	text-align: center;
 }
 
+body {
+	min-height: 100vh;
+	width: 100%;
+}
 .contenido {
     background-color: white;
     border: 2px solid #139D9D;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    width: 100%;
-    max-width: 800px;
+    width: 800px;
+	height: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
+	justify-content: flex-start;
+	box-sizing: border-box;
+	position: relative;
 }
 
 #pantalla-inicial, #pantalla-formulario, #pantalla-juego {
     width: 100%;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
 }
 
 img {
@@ -43,19 +68,20 @@ img {
 }
 
 h1 {
-	font-family: 'Rokkitt';
+	font-family: 'Inconsolata', monospace;
+	font-weight: bold;
 	margin: 20px 0;
 }
 
 .boton-comun {
-	margin: 40px 0; /* Creamos espacio visual alrededor del botón */
+	margin: 40px 0; 
 	min-width: 130px;
 	height: 40px;
 	color: black;
-	padding: 5px 10px;
-	font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	padding: 10px 10px;
+	font-family: 'Inconsolata', monospace;
 	font-weight: bold;
-	font-size: large;
+	font-size: medium;
 	cursor: pointer;
 	transition: all 0.3s ease;
 	position: relative;
@@ -67,14 +93,36 @@ h1 {
 	box-shadow: 0 5px #139D9D;
 }
 
+.boton-flecha {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 60px;
+	height: 60px;
+	border: none;
+	border-radius: 50%;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+	position: absolute;
+	bottom: 20px;
+	left: 20px;
+}
+
+.boton-flecha img {
+	width: 20px;
+	height: 20px;
+}
+
+.boton-flecha:hover {
+	background-color: #0b7676;
+}
+
 #boton-ya:hover, #boton-empezar:hover {
 	box-shadow: 0 3px #139D9D;
-	top: 1px;
   }
 
 #boton-ya:active, #boton-empezar:active {
 	box-shadow: 0 0 #139D9D;
-	top: 5px;
 }
 
 .boton-reset-color {
@@ -87,4 +135,13 @@ h1 {
 	list-style-position: inside; 
 	padding-left: 0;
 	text-align: center;
+}
+
+.centrar-contenido {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: flex-start;
+	width: 100%;
+	height: 100%;
 }

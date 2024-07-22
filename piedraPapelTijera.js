@@ -7,23 +7,30 @@ document.getElementById("boton-ya").addEventListener("click", function() {
     generarOpcionAleatoria(posibilidades);
 document.getElementById("boton-reset").addEventListener("click", resetearPartida);
 });
+document.getElementById("boton-retroceder").addEventListener("click", retrocederPagina);
 
 // Ocultar la pantalla inicial y mostrar el formulario
 function mostrarFormulario() {
     document.getElementById("pantalla-inicial").style.display = "none";
-    document.getElementById("pantalla-formulario").style.display = "block";
+    document.getElementById("pantalla-formulario").style.display = "flex";
 }
 
-// Ocultar la pantalla inicial y mostrar el formulario
+// Retroceder desde el formulario a la pantalla inicial
+function retrocederPagina(){
+    document.getElementById("pantalla-formulario").style.display = "none";
+    document.getElementById("pantalla-inicial").style.display = "flex";
+}
+
+// Ocultar el formulario y mostrar la pantalla de juego
 function mostrarJuego() {
     document.getElementById("pantalla-formulario").style.display = "none";
-    document.getElementById("pantalla-juego").style.display = "block";
+    document.getElementById("pantalla-juego").style.display = "flex";
 }
 
 //Asignar a las imágenes del jugador el evento para seleccionarlas
-var imagenes = document.getElementsByTagName("img");
+var imagenes = document.getElementsByClassName("img-jugador");
 
-for (var i = 0; i < imagenes.length-1; i++) {
+for (var i = 0; i < imagenes.length; i++) {
     var rutaImagen = "img/" + posibilidades[i] + "Jugador.png";
     imagenes[i].id = posibilidades[i];
     imagenes[i].src = rutaImagen;
@@ -48,13 +55,13 @@ function introducirJugador() {
 
     } else {
         if (!comprobarNombre(nombreJugador)) {
-            document.getElementById("mensaje-error-nombre").style.display = "block";
+            document.getElementById("mensaje-error-nombre").style.display = "flex";
         } else {
             document.getElementById("mensaje-error-nombre").style.display = "none";
         }
 
         if (!comprobarPartidas(numeroPartidas)) {
-            document.getElementById("mensaje-error-partidas").style.display = "block";
+            document.getElementById("mensaje-error-partidas").style.display = "flex";
         } else {
             document.getElementById("mensaje-error-partidas").style.display = "none";
         }
@@ -68,7 +75,7 @@ function comprobarNombre (nombreJugador) {
 
 //Función que permite comprobar que el número de partidas es válido
 function comprobarPartidas (numeroPartidas){
-    return numeroPartidas > 0;
+    return numeroPartidas > 0 && numeroPartidas < 6;
  }
 
  //Función que permite al jugador seleccionar una opción
@@ -120,7 +127,7 @@ function comprobarPartidas (numeroPartidas){
 //Resetear partida
 function resetearPartida() {
     document.getElementById("pantalla-juego").style.display = "none";
-    document.getElementById("pantalla-formulario").style.display = "block";
+    document.getElementById("pantalla-formulario").style.display = "flex";
     document.getElementById("mensaje-error-nombre").style.display = "none";
     document.getElementById("mensaje-error-partidas").style.display = "none";
     document.getElementsByName('nombre')[0].disabled = false;
@@ -129,6 +136,6 @@ function resetearPartida() {
     document.getElementById('actual').textContent = "0";
     document.getElementById('total').textContent = "0";
     var maquina = document.getElementsByTagName("img")[document.getElementsByTagName("img").length-1];
-    maquina.src = "img/defecto2.png";
+    maquina.src = "img/defecto.png";
     historial.innerHTML = "";
 }
