@@ -14,7 +14,7 @@ Elige cuántas partidas quieres jugar y enfréntante contra la máquina.
 3. Haz click en "Iniciar el juego".
 4. Introduce tu nombre y el número de partidas que quieres jugar (1-5).
 5. Haz click en "Empezar la partida".
-6. Elige tu opción (Piedra, Papel o Tijera) y haz click en "¡YA!" para jugar.
+6. Elige tu opción (Piedra, Papel o Tijera) y haz click en "¡YA!" para jugar contra la máquina.
 7. El resultado de cada partida se mostrará en el historial.
 8. Puedes reiniciar el juego en cualquier momento haciendo click en "Reset".
 9. ¡Mucha suerte! ☘️
