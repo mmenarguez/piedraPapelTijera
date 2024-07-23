@@ -9,7 +9,7 @@ Elige cuántas partidas quieres jugar y enfréntante contra la máquina.
 * ```JavaScript```
 
 ## 🚀 ¿Cómo jugar?
-1. Accede a
+1. Accede al juego a través de [este enlace](https://miriampiedrapapeltijera.netlify.app)
 2. Al abrir el juego, verás la pantalla de bienvenida con una breve explicación de las reglas.
 3. Haz click en "Iniciar el juego".
 4. Introduce tu nombre y el número de partidas que quieres jugar (1-5).
